@@ -32,7 +32,7 @@ import java.util.UUID;
 @RequestMapping("/api/eventos")
 @RequiredArgsConstructor
 @Tag(name = "Eventos", description = "Ciclo de custodia: recepción, devolución y cuadre")
-@SecurityRequirement(name = "basicAuth")
+@SecurityRequirement(name = "bearerAuth")
 public class EventoController {
 
     private final EventoService service;

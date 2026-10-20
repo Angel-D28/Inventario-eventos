@@ -11,6 +11,6 @@ import org.springframework.context.annotation.Configuration;
         title = "API de Inventario para Eventos",
         version = "0.0.1",
         description = "Control de inventario en custodia: recepción, devolución y cuadre por evento"))
-@SecurityScheme(name = "basicAuth", type = SecuritySchemeType.HTTP, scheme = "basic")
+@SecurityScheme(name = "bearerAuth", type = SecuritySchemeType.HTTP, scheme = "basic", bearerFormat = "JWT")
 public class OpenApiConfig {
 }

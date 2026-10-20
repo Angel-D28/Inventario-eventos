@@ -33,7 +33,7 @@ import java.util.UUID;
 @RequestMapping("/api")
 @RequiredArgsConstructor
 @Tag(name = "Fotos", description = "Evidencia fotográfica de recepción y devolución")
-@SecurityRequirement(name = "basicAuth")
+@SecurityRequirement(name = "bearerAuth")
 public class FotoController {
 
     private final FotoService service;

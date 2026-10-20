@@ -17,7 +17,7 @@ import java.util.UUID;
 @RequestMapping("/api/eventos")
 @RequiredArgsConstructor
 @Tag(name = "Reportes", description = "Resumen del cuadre y la evidencia de un evento")
-@SecurityRequirement(name = "basicAuth")
+@SecurityRequirement(name = "bearerAuth")
 public class ReporteController {
 
     private final ReporteService service;

@@ -35,7 +35,7 @@ import java.util.UUID;
 @RequestMapping("/api/productos")
 @RequiredArgsConstructor
 @Tag(name = "Productos", description = "Catálogo genérico de licores, menaje y cristalería")
-@SecurityRequirement(name = "basicAuth")
+@SecurityRequirement(name = "bearerAuth")
 public class ProductoController {
 
     private final ProductoService service;

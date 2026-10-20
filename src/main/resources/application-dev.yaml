@@ -18,10 +18,23 @@ spring:
       max-request-size: 11MB
 
 app:
+  security:
+    jwt:
+      secret: dev-only-secret-change-me-0123456789abcdef
+      expiration: 10s
+    admin:
+      username: dev
+      password: dev-password-123
   storage:
     root: ${STORAGE_ROOT:${user.home}/inventario-uploads}
   evidencia:
     obligatoria: true
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
 
 server:
   address: 127.0.0.1
