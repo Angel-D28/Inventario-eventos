@@ -112,6 +112,15 @@ Todas las rutas, salvo el login, exigen `Authorization: Bearer <token>`.
 
 Los errores siguen el formato `ProblemDetail` (RFC 9457): `400` datos inválidos, `401` sin credenciales, `404` no encontrado, `409` regla de negocio o conflicto de datos, `413` archivo demasiado grande.
 
+## Pruebas
+
+```bash
+mvn test                              # todas (las de integración requieren Docker)
+mvn test -Dtest='!*IntegrationTest'   # solo unitarias, sin Docker
+```
+
+- **Unitarias:** dominio, reglas de negocio de `EventoService` (Mockito), detección de imágenes y almacenamiento.
+- **Integración:** aplicación completa con MockMvc, seguridad JWT y PostgreSQL real en un contenedor (Testcontainers). Usan el perfil `test`.
 ## Estructura
 
 ```
@@ -147,7 +156,7 @@ La evidencia vive en **dos lugares** que deben respaldarse juntos: la base de da
 - [x] Evidencia fotográfica y foto de referencia
 - [x] Reporte del evento
 - [x] Autenticación con JWT
-- [ ] Pruebas automáticas (reglas del cuadre y estados)
+- [x] Pruebas automáticas (reglas del cuadre y estados)
 - [ ] Protección contra fuerza bruta en el login y HTTPS antes de exponer el servidor
 - [ ] Respaldo conjunto de base de datos y fotos
 - [ ] Aplicación móvil con modo offline y sincronización

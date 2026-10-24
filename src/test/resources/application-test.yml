@@ -1,0 +1,18 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+
+app:
+  storage:
+    root: ${java.io.tmpdir}/inventario-test-uploads
+  evidencia:
+    obligatoria: true
+  security:
+    jwt:
+      secret: test-only-secret-0123456789-abcdefghij
+      expiration: 1h
+    admin:
+      username: tester
+      password: test-password-123
