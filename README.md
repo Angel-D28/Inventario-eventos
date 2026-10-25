@@ -146,8 +146,14 @@ Una migración aplicada **nunca se edita**: los cambios van en una nueva (`V2__.
 
 ## Respaldos
 
-La evidencia vive en **dos lugares** que deben respaldarse juntos: la base de datos (volumen `inventario-data`) y la carpeta de fotos (`STORAGE_ROOT`). Una foto sin su registro, o un registro sin su archivo, es evidencia rota.
+La evidencia vive en **dos lugares** que deben respaldarse juntos: la base de datos (volumen `inventario-data`) y la carpeta de fotos (`STORAGE_ROOT`).
 
+```bash
+scripts/backup.sh                 # respaldo conjunto en ~/inventario-backups/AAAA-MM-DD_HHMMSS
+scripts/verificar-respaldo.sh     # restaura en una base temporal y comprueba que cada foto exista
+```
+
+Se conservan los últimos 14 (`BACKUP_KEEP`). Hay un temporizador de systemd de usuario (ver `inventario-backup.timer`). Haz un respaldo manual al cerrar cada evento y copia la carpeta de respaldos fuera de este equipo.
 ## Hoja de ruta
 
 - [x] Modelo de datos y migración inicial
